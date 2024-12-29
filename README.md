@@ -29,11 +29,6 @@ Feel free to:
 Explore the projects and code for inspiration.
 Clone the repository and try solving the exercises yourself.
 Follow my journey and cheer me on!
-🤝 Connect With Me
-If you’re also taking the challenge or just love Python, let’s connect:
 
-GitHub: [Your Profile Link]
-Twitter: [Your Twitter Link, if any]
-LinkedIn: [Your LinkedIn Link, if any]
 Thanks for stopping by! I hope this repository inspires you to start your own coding journey. 💻✨
 
