@@ -85,6 +85,8 @@ print(travel_log["Germany"]["cities_visited"][2])
 #________________________________________________________________________________________________________________________________
 # The Secret Auction 
 
+# The Secret Auction 
+
 print('''
                          ___________
                          \         /
@@ -100,14 +102,45 @@ print('''
                       /_______________\     
 ''')
 print("Welcome to the Secret Auction!")
-def name_bid():
-    name = input("What is your name?")
-    bid = input("What is your bud price?")
-    registry = {name,bid}
-add = input("Are there any other user that would like to bid?").strip().upper()
-while add not in {"YES","NO"}.strip().upper():
-    add = input("Invalid answer, please choose YES or NO")
 
-while add == "yes":
-    name_bid()
+# Initialize an empty registry for bidders
+registry = {}
+
+# Main auction loop
+while True:
+    name = input("What is your name?: ")
+    
+    # Handle bid input and validate it's a positive integer
+    while True:
+        try:
+            bid = int(input("What is your bid price?: $"))
+            if bid <= 0:
+                raise ValueError("Bid must be a positive number.")
+            break
+        except ValueError as e:
+            print(f"Invalid input: {e}. Please enter a valid bid.")
+
+    registry[name] = bid  # Add the bidder's name and bid to the registry
+    
+    # Ask if there are more bidders
+    add = input("Are there any other users that would like to bid? (YES/NO): ").strip().upper()
+    while add not in {"YES", "NO"}:
+        add = input("Invalid answer. Please type 'YES' or 'NO': ").strip().upper()
+    
+    if add == "NO":
+        break  # Exit the loop if no more bidders
+
+# Clear the screen for final output
+print("\n" * 100)
+
+# Find the highest bidder
+if registry:
+    highest_bidder = max(registry, key=registry.get)
+    print("Thank you for all the bidding. Bidding is now closed.")
+    print(f"The winner is {highest_bidder} with a bid of ${registry[highest_bidder]}!")
 else:
+    print("No bids were placed.")
+
+# Square Brackets []: Access or define elements in lists or dictionaries.
+# Curly Brackets {}: Create dictionaries or sets.
+# Parentheses (): Group operations, call functions, or define tuples.
