@@ -84,31 +84,6 @@ player.catch_pokemon(wild_pokemon)
 # Show trainer’s Pokémon collection
 player.show_collection()
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 class Pokemon:
     def __init__(self, name, hp, attack_moves):
         self.name = name
